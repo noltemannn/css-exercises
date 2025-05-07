@@ -1,0 +1,14 @@
+.p_boton,.s_boton{
+    font-size:24px;
+    font-family:Helvetica, "Times New Roman", sans-serif;
+
+}
+
+.p_boton{
+    background-color:black;
+    color:white;
+}
+
+.s_boton{
+    background-color:yellow;
+}
