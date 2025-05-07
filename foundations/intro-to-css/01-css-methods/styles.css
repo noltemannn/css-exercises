@@ -3,3 +3,9 @@ div {
   background: yellow;
   font-weight: bold;
 }
+
+button {
+  color: pink;
+  background: green;
+  font-weight: bold;
+}
