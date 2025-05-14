@@ -9,7 +9,6 @@ body {
   margin: 0;
   background: #aaa;
   color: #333;
-  /* I'll give you this one for free lol */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,9 +19,23 @@ body {
   width: 480px;
   border-radius: 10px;
   box-shadow: 2px 4px 16px rgba(0,0,0,.2);
+  display: flex;
+  flex-direction: column; /* Apila las secciones principales verticalmente */
+  padding: 16px; /* Espacio interior */
+  gap: 16px; /* Espacio vertical entre las secciones (cabecera, texto, botones) */
 }
 
+/* Estilos para el contenedor de la cabecera (asumiendo que agregaste el div en el HTML) */
+.modal-header-row {
+  display: flex; /* Convierte este contenedor en Flex */
+  align-items: center; /* Alinea verticalmente los elementos en esta fila */
+  justify-content: space-between; /* Distribuye el espacio */
+  /* gap: 16px; */ /* Puedes usar gap aquí si no usas space-between, o ajusta los márgenes */
+}
+
+
 .icon {
+  flex-shrink: 0; /* Evita que el icono se encoja */
   color: royalblue;
   font-size: 26px;
   font-weight: 700;
@@ -35,7 +48,16 @@ body {
   justify-content: center;
 }
 
+.header {
+  font-weight: 700;
+  font-size: 20px; /* Ajustado tamaño */
+  flex-grow: 1; /* Permite que el título ocupe el espacio disponible */
+  margin-left: 16px; /* Espacio a la izquierda del título */
+   display: block; /* Aseguramos que no tiene display: flex heredado */
+}
+
 .close-button {
+  flex-shrink: 0; /* Evita que el botón de cerrar se encoja */
   background: #eee;
   border-radius: 50%;
   color: #888;
@@ -48,6 +70,26 @@ body {
   justify-content: center;
   border: 1px solid #eee;
   padding: 0;
+
+  /* **AJUSTE para alineación vertical más precisa** */
+  /* Prueba este pequeño margen superior para bajarlo un poco */
+  margin-top: 2px;
+
+  /* Si 2px no es suficiente, prueba con 3px o 4px. O podrías probar */
+  /* align-self: flex-end; /* Esto lo alinearía a la parte de abajo de la línea flex */
+  /* Comenta la línea de margin-top si pruebas align-self */
+
+}
+
+.text {
+   display: block; /* Aseguramos que no tiene display: flex heredado */
+
+}
+
+.buttons {
+  display: flex; /* Este contenedor ya era Flex */
+  justify-content: flex-start; /* Alinea los botones a la derecha */
+  gap: 8px; /* Espacio entre botones */
 }
 
 button {
@@ -67,3 +109,6 @@ button.cancel {
   border: 1px solid #ddd;
   color: royalblue;
 }
+
+/* Las reglas .continue, .cancel con margin-top ya no son necesarias si usas gap en .modal */
+/* Puedes revisar si quieres mantenerlas o eliminarlas */
